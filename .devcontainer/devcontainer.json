@@ -1,0 +1,12 @@
+{
+  "name": "TS-intermediate-course-devcontainer",
+  "image": "mcr.microsoft.com/devcontainers/universal:2",
+  "features": {
+    "ghcr.io/prulloac/devcontainer-features/ollama:1": {
+      "pull": ["llama3.2"]
+    },
+    "ghcr.io/devcontainers/features/python:1": {
+      "installJupyterlab": true
+    }
+  }
+}

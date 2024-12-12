@@ -1,0 +1,101 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500">
+    <!-- Background -->
+    <rect width="800" height="500" fill="#f8f9fa"/>
+    
+    <!-- Title -->
+    <text x="400" y="50" text-anchor="middle" font-size="24" font-weight="bold" fill="#2c3e50">Key Features</text>
+    
+    <!-- Main Feature Boxes -->
+    <g transform="translate(50,100)">
+        <!-- Chain Management Box -->
+        <rect x="0" y="0" width="220" height="280" rx="10" fill="#e3f2fd" stroke="#1565c0" stroke-width="2"/>
+        <text x="110" y="40" text-anchor="middle" font-size="18" font-weight="bold" fill="#1565c0">Chain Management</text>
+        
+        <!-- Chain Management Items -->
+        <g transform="translate(20,70)">
+            <circle cx="10" cy="0" r="4" fill="#1565c0"/>
+            <text x="30" y="5" font-size="14" fill="#2c3e50">
+                <tspan x="30" dy="0">Create sequences</tspan>
+                <tspan x="30" dy="18">of operations</tspan>
+            </text>
+            
+            <circle cx="10" cy="50" r="4" fill="#1565c0"/>
+            <text x="30" y="55" font-size="14" fill="#2c3e50">
+                <tspan x="30" dy="0">Pass data between</tspan>
+                <tspan x="30" dy="18">components</tspan>
+            </text>
+            
+            <circle cx="10" cy="100" r="4" fill="#1565c0"/>
+            <text x="30" y="105" font-size="14" fill="#2c3e50">
+                <tspan x="30" dy="0">Handle errors</tspan>
+                <tspan x="30" dy="18">and retries</tspan>
+            </text>
+            
+            <circle cx="10" cy="150" r="4" fill="#1565c0"/>
+            <text x="30" y="155" font-size="14" fill="#2c3e50">
+                <tspan x="30" dy="0">Manage state</tspan>
+                <tspan x="30" dy="18">and context</tspan>
+            </text>
+        </g>
+    </g>
+    
+    <!-- Data Handling Box -->
+    <g transform="translate(290,100)">
+        <rect x="0" y="0" width="220" height="280" rx="10" fill="#e8f5e9" stroke="#2e7d32" stroke-width="2"/>
+        <text x="110" y="40" text-anchor="middle" font-size="18" font-weight="bold" fill="#2e7d32">Data Handling</text>
+        
+        <!-- Data Handling Items -->
+        <g transform="translate(20,70)">
+            <circle cx="10" cy="0" r="4" fill="#2e7d32"/>
+            <text x="30" y="5" font-size="14" fill="#2c3e50">
+                <tspan x="30" dy="0">Process various</tspan>
+                <tspan x="30" dy="18">data formats</tspan>
+            </text>
+            
+            <circle cx="10" cy="50" r="4" fill="#2e7d32"/>
+            <text x="30" y="55" font-size="14" fill="#2c3e50">
+                <tspan x="30" dy="0">Transform inputs</tspan>
+                <tspan x="30" dy="18">and outputs</tspan>
+            </text>
+            
+            <circle cx="10" cy="100" r="4" fill="#2e7d32"/>
+            <text x="30" y="105" font-size="14" fill="#2c3e50">Cache responses</text>
+            
+            <circle cx="10" cy="150" r="4" fill="#2e7d32"/>
+            <text x="30" y="155" font-size="14" fill="#2c3e50">Handle streaming</text>
+        </g>
+    </g>
+    
+    <!-- Integration Capabilities Box -->
+    <g transform="translate(530,100)">
+        <rect x="0" y="0" width="220" height="280" rx="10" fill="#fff3e0" stroke="#ef6c00" stroke-width="2"/>
+        <text x="110" y="40" text-anchor="middle" font-size="18" font-weight="bold" fill="#ef6c00">Integration Capabilities</text>
+        
+        <!-- Integration Items -->
+        <g transform="translate(20,70)">
+            <circle cx="10" cy="0" r="4" fill="#ef6c00"/>
+            <text x="30" y="5" font-size="14" fill="#2c3e50">
+                <tspan x="30" dy="0">Connect to multiple</tspan>
+                <tspan x="30" dy="18">LLM providers</tspan>
+            </text>
+            
+            <circle cx="10" cy="50" r="4" fill="#ef6c00"/>
+            <text x="30" y="55" font-size="14" fill="#2c3e50">
+                <tspan x="30" dy="0">Interface with</tspan>
+                <tspan x="30" dy="18">databases</tspan>
+            </text>
+            
+            <circle cx="10" cy="100" r="4" fill="#ef6c00"/>
+            <text x="30" y="105" font-size="14" fill="#2c3e50">
+                <tspan x="30" dy="0">Work with</tspan>
+                <tspan x="30" dy="18">document formats</tspan>
+            </text>
+            
+            <circle cx="10" cy="150" r="4" fill="#ef6c00"/>
+            <text x="30" y="155" font-size="14" fill="#2c3e50">
+                <tspan x="30" dy="0">Support vector</tspan>
+                <tspan x="30" dy="18">stores</tspan>
+            </text>
+        </g>
+    </g>
+</svg>
