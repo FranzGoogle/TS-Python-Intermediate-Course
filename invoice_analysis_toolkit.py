@@ -16,13 +16,13 @@ def load_invoices(filename):
         # Open the file in read mode
         with open(filename, 'r') as file:
             # Load JSON data from the file
-            invoices = json.load(filename)
+            invoices = json.load(file)
         
         # Validate invoices using a list comprehension
         validated_invoices = [
-            invoice for invoice in invoices
+            inv for inv in invoices
             # Check that each invoice has required keys, all() ensures every specified key exists
-            if all(key in invoice for key in ['invoice_id', 'customer_name', 'total_amount'])
+            if all(key in inv for key in ['invoice_id', 'customer_name', 'total_amount'])
         ]
         
         return validated_invoices
@@ -49,11 +49,11 @@ def process_invoices(invoices):
         dict: Processed invoice information
     """
     # Filter paid invoices
-    paid_invoices = list(filter(lambda invoice: invoice['payment_status'] == 'Paid', invoices))
+    paid_invoices = list(filter(lambda inv: inv['payment_status'] == 'Paid', invoices))
     
     # Calculate total items per invoice
     total_items = list(map(
-        lambda invoice: sum(item['quantity'] for item in invoice['items']), invoices
+        lambda inv: sum(item['quantity'] for item in inv['items']), invoices
     ))
     
     return {
@@ -74,19 +74,19 @@ def invoice_comprehensions(invoices):
         dict: Comprehension results
     """
     # List of customer names
-    customer_names = [invoice['customer_name'] for invoice in invoices]
+    customer_names = [inv['customer_name'] for inv in invoices]
     
     # Dictionary of invoice totals by customer
     customer_totals = {
-        invoice['customer_name']: invoice['total_amount'] for invoice in invoices
+        inv['customer_name']: inv['total_amount'] for inv in invoices
     }
     
     # High-value invoice details
     high_value_invoices = [
         {
-            'customer': invoice['customer_name'],
-            'total': invoice['total_amount']
-        } for invoice in invoices if invoice['total_amount'] > 4000
+            'customer': inv['customer_name'],
+            'total': inv['total_amount']
+        } for inv in invoices if inv['total_amount'] > 4000
     ]
     
     return {
@@ -97,6 +97,43 @@ def invoice_comprehensions(invoices):
 
 
 # 4) Mini-Project: Invoice Analytics
+class InvoiceAnalyzer:
+    def __init__(self, invoices):
+        self.invoices = invoices
+    
+    def total_revenue(self):
+        """Calculate total revenue"""
+        return sum(inv['total_amount'] for inv in self.invoices)
+    
+    def revenue_by_status(self):
+        """Group revenue by payment status"""
+        status_revenue = {}
+        for inv in self.invoices:
+            status = inv['payment_status']
+            status_revenue[status] = status_revenue.get(status, 0) + inv['total_amount']
+        return status_revenue
 
+
+### LAB CHALLENGE ###
+def main():
+    # Load invoices
+    invoices = load_invoices('./data/invoice-data.json')
+    
+    # Process invoices
+    processed_data = process_invoices(invoices)
+    
+    # Apply comprehensions
+    comprehension_results = invoice_comprehensions(invoices)
+    
+    # Analyze invoices
+    analyzer = InvoiceAnalyzer(invoices)
+    
+    # Print results
+    print("Total Revenue:", analyzer.total_revenue())
+    print("Revenue by Status:", analyzer.revenue_by_status())
+    print("High-Value Invoices:", comprehension_results['high_value_invoices'])
+
+if __name__ == "__main__":
+    main()
 
 
