@@ -86,7 +86,7 @@ def invoice_comprehensions(invoices):
         {
             'customer': invoice['customer_name'],
             'total': invoice['total_amount']
-        } for invoice in invoices if inv['total_amount'] > 4000
+        } for invoice in invoices if invoice['total_amount'] > 4000
     ]
     
     return {
